@@ -1,0 +1,475 @@
+
+/*FUENTES CUSTOM IMPORTADAS*/
+
+@font-face{
+    
+    font-family: "yanone";
+    src: url("fonts/yanone.ttf");
+}
+
+@font-face{
+    
+    font-family: "lemon";
+    src: url("fonts/lemon.otf");
+}
+
+/*ESTILOS GENERALES*/
+
+.mini{
+    display: inline-flex;
+    width: 8% !important;
+    margin-left: 20px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: "yanone", Arial, Helvetica !important;   
+    background: url("../img/fondo.jpg");
+    font-size: 20px !important;   
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+span{
+    color: black !important;
+}
+
+.clearfix{
+   float: none;
+   clear: both;
+}
+
+/*BARRA DE NAVEGACION*/
+
+#logo{
+    height: 4em;
+    padding-right: 40px;
+    padding-left: 20px;
+}
+#logo:hover{
+    transform:scale(1.2,1.2);
+}
+
+header{
+    width: 100%;
+    height: 4em;
+    background: black;
+    position: fixed;
+  /*  text-transform: uppercase;  */
+    display: flex;    
+    align-items: center;
+    z-index: 999;
+}
+
+.menu{
+    margin-left: 20%;
+    width: 60%;
+    display: flex;    
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "yanone", Arial, Helvetica !important;
+    font-size: 22px !important;
+        
+}
+
+
+.dropdown-menu.show {
+   font-family: "yanone", Arial, Helvetica !important; 
+   font-size: 18px !important; 
+   width: 90px !important;
+   min-width: 10px;
+   padding: 5px;
+   transform: translate3d(-6px, 28px, 0px) !important;  
+}
+
+#menu{
+    width: 80%;
+}
+
+.especial{
+    color: black;
+    cursor: pointer;
+    margin-top : 5px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.account{
+    width: 20%;
+    display: flex;   
+    align-items: center;
+}
+
+
+.login{
+    width: 100%;
+    display: flex;    
+    align-items: center;
+}
+
+header ul{
+    display: inline-block;
+    width: 100%;   
+    height: inherit;
+    margin: 0px auto;
+    display: flex;    
+    align-items: center;
+}
+
+header ul li{
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 20px;
+}
+
+header a{
+    display: flex;    
+    align-items: center;
+    height: inherit;
+    color: white;
+    text-decoration: none;
+    transition: all  300ms;
+}
+
+header a:hover{
+    display: flex;    
+    align-items: center;
+    color: grey;
+    text-decoration: none;
+    transition: all  300ms;
+}
+
+#content{
+    width: 60%;
+    margin: 0px auto;
+    background: white;
+    padding-top: 4em;
+    padding-bottom: 1em;
+    box-shadow: 0px 0px 0px 0px black;
+    min-height: 800px;
+    
+}
+
+footer{
+    
+    font-family: "yanone", Arial, Helvetica !important;
+    font-size: 20px !important; 
+    width: 60%;
+    margin: 0px auto;
+    color: white;
+    background: black;
+    justify-content: center;
+    font-size: 15px;
+    height: 150px;
+    
+}
+
+.foot1{
+    
+    color: white;
+    background: grey;
+    height: 50px;
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.foot3{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    top: 25%;
+    }
+
+.foot2{
+    height: 20px;
+    width: 33.33%;
+    float: left;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: black;
+    
+    
+}
+
+
+/*ABOUT*/
+
+#title{
+    
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#title h1{
+    font-size: 40px;
+    border-bottom: 2px solid lightgray;
+    border-bottom-width: thin;
+    padding-bottom: 5px;
+}
+
+#title h2{
+    font-size: 35px;
+    color: gray;
+    padding-bottom: 5px;
+}
+
+#title h4{
+    font-size: 25px;
+    color: gray;
+}
+
+article.about{
+    width: 70%;
+    margin: 0px auto;
+}
+
+.about p{
+    text-align: justify;
+}
+
+
+/*SECCION DE FORMULARIO*/
+
+.container{
+    padding-top: 20px;
+}
+
+.container h2{
+    border-bottom: 1px solid #e9ecef;
+    border-bottom-width: initial;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    display: block;
+    padding-left: 15%;
+}
+
+.container .project-title{
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 5%;
+}
+
+.container .image{
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+}
+
+.container .image img{
+   /*float: left;  */
+    width: 100%;
+}
+
+.container .data{
+    float: left;
+    width: 40%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.container .data .ebutton{
+    display: flex;
+}
+
+
+
+.button-edit, 
+.button-delete{
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 22px;
+ /*   padding: 1px 40px 2px 40px;   */
+    display: block;
+    margin-top: 20px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 5em;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+::file-selector-button:hover,
+.button-edit:hover, 
+.button-delete:hover,
+.button-delete2:hover{
+    background: grey;
+    color: white;
+}
+
+::file-selector-button,
+.button-delete2{
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 22px;
+  /*  padding: 1px 40px 2px 40px;   */
+    display: block;
+    margin-top: 20px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+::file-selector-button{
+    width: 9em;
+ }
+
+
+form{
+    width: 100%;
+    padding-left: 15%;
+  
+}
+
+form label{
+    width: 100%;
+    display: block;
+    float: left;
+    margin-bottom: 1px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"], 
+form textarea{
+    width: 50%;
+}
+
+form input[type="submit"]{
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 22px;
+ /*   padding: 2px 50px 3px 50px;  */
+    display: inline-block;
+    margin-top: 20px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 5em;
+}
+
+form input[type="submit"]:hover{
+    background: grey;
+    color: white;
+}
+
+form input[disabled]{
+    background: lightgrey;
+    color: black;
+}
+
+span{
+    color: red;
+    font-size: 18px;
+}
+
+.success{
+    margin-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.failed{
+    margin-top: 10px;
+}
+
+
+/*SECCION DE PROYECTOS*/
+
+.project{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 30%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.project .image{
+    width: 100%;
+}
+
+.project img{
+    width: 100%;
+}
+
+.project a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*boton enviar archivo*/
+
+.custom-file-input {
+  position: relative;
+  display: inline-flex;
+  float: left;
+}
+
+.custom-file-input input[type="file"] {
+  display: none;
+}
+
+.custom-file-input label {
+  font-family: "yanone", Arial, Helvetica;
+  font-size: 22px;  
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #e9e9e9;
+  color: #333;
+  width: 5em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.custom-file-input label:hover {
+  background-color: #d5d5d5;
+}
+
+/*imagen preview*/
+
+
+.submit{
+    width: 100%;
+    float: none;
+    display: inline-block;;
+}
+
+.index{
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.carousel-item, .carousel-item-next, .carousel-item-prev, .active.carousel-item-start,
+.carousel-item carousel-item-next carousel-item-start, .carousel-item.active,
+.carousel-item active, .carousel-item active carousel-item-start, .carousel-inner, #carousel,
+.carousel-item-next:not(.carousel-item-end){
+    position: unset !important;
+}

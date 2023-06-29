@@ -1,0 +1,45 @@
+<div class="container" *ngIf="user">
+    
+    <h2>{{title}}</h2>
+    
+    <form #accountForm="ngForm" (ngSubmit)="onSubmit(accountForm)">
+        
+        <p>
+            <label for="name">Name</label> <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required />
+            <span *ngIf="name.touched && !name.valid">*Campo requerido</span>
+        </p>
+         <p>
+            <label for="surname">Surname</label> <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required />
+            <span *ngIf="surname.touched && !surname.valid">*Campo requerido</span>
+        </p>
+        <p>
+            <label for="email">Email</label> <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" required />
+            <span *ngIf="email.touched && !email.valid">*Campo requerido</span>
+        </p>
+                       
+        <p>
+            <label>User image</label>               
+        </p>
+        
+        <div class="custom-file-input" >
+            <input type="file" id="image" placeholder="Upload image" (change)="fileChangeEvent($event)"/>
+            <label for="image" id="fileInputLabel">Select file</label>   
+        </div>
+        
+        <div *ngIf="preview" >
+            <img class="mini" [src]="preview" />   
+        </div>
+        <div *ngIf="user.image && !preview">
+            <img class="mini" src="{{url+'getImage2/' + user.image}}" />    
+        </div>
+              
+        <div class="submit">
+            <input type="submit" value="Send" [disabled]="!accountForm.form.valid"/>
+        </div>
+        
+        <div class="failed" *ngIf="status=='failed'">Error in edition</div>
+        <div class="success" *ngIf="status=='success'">Edition complete</div>
+        
+    </form>
+    
+</div>

@@ -1,0 +1,54 @@
+<div class="container" *ngIf="project">
+    
+    <h2>{{title}}</h2>
+    
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        
+        <p>
+            <label for="name">Name</label> <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required />
+            <span *ngIf="name.touched && !name.valid">*required</span>
+        </p>
+        <p>
+            <label for="description">Descripcion</label> <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span *ngIf="description.touched && !description.valid">*required</span>
+        </p>
+        <p>
+            <label for="category">Category </label> <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required />
+            <span *ngIf="category.touched && !category.valid">*required</span>
+        </p>
+        <p>
+            <label for="langs">Languages</label> <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required/>
+            <span *ngIf="langs.touched && !langs.valid">*required</span>
+        </p>
+        <p>
+            <label for="year">Year</label> <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required/>
+            <span *ngIf="year.touched && !year.valid">*required</span>
+        </p>
+        
+        <p>
+            <label>Proyect image</label>               
+        </p>
+        
+        <div class="custom-file-input" >
+            <input type="file" id="image" placeholder="Upload image" (change)="fileChangeEvent($event)"/>
+            <label for="image" id="fileInputLabel">Select file</label>   
+        </div>
+        
+        <div *ngIf="preview" >
+            <img class="mini" [src]="preview" />   
+        </div>
+        <div *ngIf="project.image && !preview">
+            <img class="mini" src="{{url+'getImage/' + project.image}}" />    
+        </div>
+        
+        <div class="submit">
+            <input type="submit" value="Send" [disabled]="!projectForm.form.valid"/>
+        </div>
+        
+        <div class="success" *ngIf="status=='success'">Project created, you can see<a [routerLink]="['/project', save_project._id]"> here</a> </div>
+        <div class="failed" *ngIf="status=='failed'">Error in process</div>
+        <div class="failed" *ngIf="status=='failed' && !identity">You must be logged to create projects</div>
+        
+    </form>
+    
+</div>

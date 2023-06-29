@@ -1,0 +1,19 @@
+<div class="container">
+    
+    <h2>{{title}}</h2>
+    
+    <ul>
+     <!--   <li *ngFor="let project of projects | filterProject: identity" class="project">   -->
+        <li *ngFor="let project of projects" class="project">
+            <a [routerLink]="['/project',project._id]">
+                <div class="image">
+                    <img src="{{url+'getImage/'+project.image}}" *ngIf="project.image"/>
+                </div>
+                <h3>{{project.name}}</h3>
+                <p>{{project.category}}</p>    
+            </a>    
+        </li>
+    </ul>
+
+    
+</div>

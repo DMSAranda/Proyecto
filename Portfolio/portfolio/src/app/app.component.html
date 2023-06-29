@@ -1,0 +1,67 @@
+<header>
+   
+    <!-- Web principal que persiste en todos los apartados con el menu con los links de cada uno
+        y al lado derecho el menu de login, cuenta etc, debajo el footer que tambien persiste siempre -->
+    
+    <nav class="menu">
+        <ul id="menu">
+            <a [routerLink]="['/home']" [routerLinkActive]="['active']"><img id="logo" src="../assets/img/LOGO.png" alt=""/></a>
+            <li><a [routerLink]="['/projects']" [routerLinkActive]="['active']">Projects</a> </li>
+            <li><a [routerLink]="['/create']" [routerLinkActive]="['active']">Create</a> </li>
+            <li><a [routerLink]="['/about']" [routerLinkActive]="['active']">About</a> </li>
+            <li><a [routerLink]="['/contact']" [routerLinkActive]="['active']">Contact</a> </li>
+        </ul>  
+        
+    </nav> 
+    <nav class="account">
+          
+        
+         <ul *ngIf="!identity">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" style="cursor:pointer;">MyDMS</a> 
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="['/login']" [routerLinkActive]="['active']" class="especial" >
+                                <span> <i class="fa-solid fa-user"></i> &nbsp;</span>Login</a> 
+                        </li>
+                        <li><a [routerLink]="['/register']" [routerLinkActive]="['active']" class="especial">
+                                <span> <i class="fa-regular fa-user"></i> &nbsp;</span>Register</a> 
+                        </li>
+                    </ul>  
+                </li>    
+         </ul>
+        
+         <ul *ngIf="identity">   
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-bs-toggle="dropdown" style="cursor:pointer;">MyDMS</a> 
+                    <ul class="dropdown-menu">
+                         <li><a [routerLink]="['/account']" [routerLinkActive]="['active']" class="especial">
+                                 <span> <i class="fa-solid fa-file-invoice"></i> &nbsp;&nbsp;</span>Account</a>
+                         </li> 
+                         <li><a (click)="logout()" class="especial">
+                                 <span> <i class="fa-solid fa-right-from-bracket"></i> &nbsp;</span>Logout</a>
+                         </li>
+                    </ul> 
+                </li>
+         </ul>
+        
+    </nav>
+</header>
+
+<section id="content">
+    <router-outlet></router-outlet>    
+</section>
+
+<footer>
+    <div class="foot1"> AbsentaStudio 2023</div>
+    
+    <div class="foot3">
+        <div class="foot2">Aranda de Duero </div>
+        <div class="foot2">dmsaranda@outlook.es</div>
+        <div class="foot2">645769759</div>
+    </div>
+    
+   
+</footer>
+    
+
+

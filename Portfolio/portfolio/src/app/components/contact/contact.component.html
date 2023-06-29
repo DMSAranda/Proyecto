@@ -1,0 +1,37 @@
+<div class="container">
+    
+    <h2>{{title}}</h2>
+    
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+        
+        <p>
+            <label for="name">Name</label> <input type="text" name="name" #name="ngModel" [(ngModel)]="data.name" required />
+            <span *ngIf="name.touched && !name.valid">*Campo requerido</span>
+        </p>
+        
+        <p>
+            <label for="surname">Surname </label> <input type="text" name="surname" #surname="ngModel" [(ngModel)]="data.surname" required />
+            <span *ngIf="surname.touched && !surname.valid">*Campo requerido</span>
+        </p>
+        <p>
+            <label for="subject">Subject</label> <input type="text" name="subject" #subject="ngModel" [(ngModel)]="data.subject" required/>
+            <span *ngIf="subject.touched && !subject.valid">*Campo requerido</span>
+        </p>
+        <p>
+            <label for="email">Email</label> <input type="text" name="email" #email="ngModel" [(ngModel)]="data.email" required/>
+            <span *ngIf="email.touched && !email.valid">*Campo requerido</span>
+        </p>
+        
+        <p>
+            <label for="message">Message</label> <textarea name="message" #message="ngModel" [(ngModel)]="data.message" required></textarea>
+            <span *ngIf="message.touched && !message.valid">*Campo requerido</span>
+        </p>
+       
+        <input type="submit" value="Send" [disabled]="!contactForm.form.valid"/>
+        
+        <div class="success" *ngIf="status=='success'">Correo enviado.</div>
+        <div class="failed" *ngIf="status=='failed'">Error al enviar</div>
+        
+    </form>
+    
+</div>
